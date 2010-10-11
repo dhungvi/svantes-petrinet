@@ -99,26 +99,26 @@ public class PetriNetModelItemProviderAdapterFactory extends PetriNetModelAdapte
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link PetriNetModel.Object} instances.
+	 * This keeps track of the one adapter used for all {@link PetriNetModel.PObject} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ObjectItemProvider objectItemProvider;
+	protected PObjectItemProvider pObjectItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link PetriNetModel.Object}.
+	 * This creates an adapter for a {@link PetriNetModel.PObject}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createObjectAdapter() {
-		if (objectItemProvider == null) {
-			objectItemProvider = new ObjectItemProvider(this);
+	public Adapter createPObjectAdapter() {
+		if (pObjectItemProvider == null) {
+			pObjectItemProvider = new PObjectItemProvider(this);
 		}
 
-		return objectItemProvider;
+		return pObjectItemProvider;
 	}
 
 	/**
@@ -336,7 +336,7 @@ public class PetriNetModelItemProviderAdapterFactory extends PetriNetModelAdapte
 	 */
 	public void dispose() {
 		if (petriNetItemProvider != null) petriNetItemProvider.dispose();
-		if (objectItemProvider != null) objectItemProvider.dispose();
+		if (pObjectItemProvider != null) pObjectItemProvider.dispose();
 		if (nodeItemProvider != null) nodeItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (placeItemProvider != null) placeItemProvider.dispose();

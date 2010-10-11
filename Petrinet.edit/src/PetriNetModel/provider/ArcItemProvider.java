@@ -33,7 +33,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class ArcItemProvider
-	extends ObjectItemProvider
+	extends PObjectItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -130,11 +130,8 @@ public class ArcItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		BigInteger labelValue = ((Arc)object).getId();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Arc_type") :
-			getString("_UI_Arc_type") + " " + label;
+		Arc arc = (Arc)object;
+		return getString("_UI_Arc_type") + " " + arc.getId();
 	}
 
 	/**
