@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Node extends PetriNetModel.Object {
+public interface Node extends PObject {
 	/**
 	 * Returns the value of the '<em><b>Out</b></em>' reference list.
 	 * The list contents are of type {@link PetriNetModel.Arc}.

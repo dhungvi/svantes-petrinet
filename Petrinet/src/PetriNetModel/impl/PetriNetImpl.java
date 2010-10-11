@@ -6,6 +6,7 @@
  */
 package PetriNetModel.impl;
 
+import PetriNetModel.PObject;
 import PetriNetModel.PetriNet;
 import PetriNetModel.PetriNetModelPackage;
 
@@ -64,8 +65,8 @@ public class PetriNetImpl extends CDOObjectImpl implements PetriNet {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<PetriNetModel.Object> getObjects() {
-		return (EList<PetriNetModel.Object>)eGet(PetriNetModelPackage.Literals.PETRI_NET__OBJECTS, true);
+	public EList<PObject> getObjects() {
+		return (EList<PObject>)eGet(PetriNetModelPackage.Literals.PETRI_NET__OBJECTS, true);
 	}
 
 } //PetriNetImpl

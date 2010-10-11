@@ -6,20 +6,12 @@
  */
 package PetriNetModel.util;
 
-import PetriNetModel.Arc;
-import PetriNetModel.Node;
-import PetriNetModel.PetriNet;
-import PetriNetModel.PetriNetModelPackage;
-import PetriNetModel.Place;
-import PetriNetModel.Token;
-import PetriNetModel.Transition;
-
+import PetriNetModel.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+import java.lang.Object;
 
 /**
  * <!-- begin-user-doc -->
@@ -82,8 +74,8 @@ public class PetriNetModelAdapterFactory extends AdapterFactoryImpl {
 				return createPetriNetAdapter();
 			}
 			@Override
-			public Adapter caseObject(PetriNetModel.Object object) {
-				return createObjectAdapter();
+			public Adapter casePObject(PObject object) {
+				return createPObjectAdapter();
 			}
 			@Override
 			public Adapter caseNode(Node object) {
@@ -140,16 +132,16 @@ public class PetriNetModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link PetriNetModel.Object <em>Object</em>}'.
+	 * Creates a new adapter for an object of class '{@link PetriNetModel.PObject <em>PObject</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see PetriNetModel.Object
+	 * @see PetriNetModel.PObject
 	 * @generated
 	 */
-	public Adapter createObjectAdapter() {
+	public Adapter createPObjectAdapter() {
 		return null;
 	}
 

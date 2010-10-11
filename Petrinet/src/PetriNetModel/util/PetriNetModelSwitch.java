@@ -6,6 +6,7 @@
  */
 package PetriNetModel.util;
 
+import PetriNetModel.*;
 import PetriNetModel.Arc;
 import PetriNetModel.Node;
 import PetriNetModel.PetriNet;
@@ -99,16 +100,16 @@ public class PetriNetModelSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PetriNetModelPackage.OBJECT: {
-				PetriNetModel.Object object = (PetriNetModel.Object)theEObject;
-				T result = caseObject(object);
+			case PetriNetModelPackage.POBJECT: {
+				PObject pObject = (PObject)theEObject;
+				T result = casePObject(pObject);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PetriNetModelPackage.NODE: {
 				Node node = (Node)theEObject;
 				T result = caseNode(node);
-				if (result == null) result = caseObject(node);
+				if (result == null) result = casePObject(node);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -116,7 +117,7 @@ public class PetriNetModelSwitch<T> {
 				Transition transition = (Transition)theEObject;
 				T result = caseTransition(transition);
 				if (result == null) result = caseNode(transition);
-				if (result == null) result = caseObject(transition);
+				if (result == null) result = casePObject(transition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -124,14 +125,14 @@ public class PetriNetModelSwitch<T> {
 				Place place = (Place)theEObject;
 				T result = casePlace(place);
 				if (result == null) result = caseNode(place);
-				if (result == null) result = caseObject(place);
+				if (result == null) result = casePObject(place);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PetriNetModelPackage.ARC: {
 				Arc arc = (Arc)theEObject;
 				T result = caseArc(arc);
-				if (result == null) result = caseObject(arc);
+				if (result == null) result = casePObject(arc);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -161,17 +162,17 @@ public class PetriNetModelSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Object</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>PObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Object</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>PObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseObject(PetriNetModel.Object object) {
+	public T casePObject(PObject object) {
 		return null;
 	}
 

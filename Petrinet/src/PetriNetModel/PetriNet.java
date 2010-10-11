@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
 public interface PetriNet extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>Objects</b></em>' containment reference list.
-	 * The list contents are of type {@link PetriNetModel.Object}.
+	 * The list contents are of type {@link PetriNetModel.PObject}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Objects</em>' containment reference list isn't clear,
@@ -42,6 +42,6 @@ public interface PetriNet extends CDOObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<PetriNetModel.Object> getObjects();
+	EList<PObject> getObjects();
 
 } // PetriNet

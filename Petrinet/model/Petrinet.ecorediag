@@ -20,7 +20,7 @@
     <children xmi:type="notation:Node" xmi:id="_yd4OQL8xEd-e2bZ7iJrbiA" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_yd41UL8xEd-e2bZ7iJrbiA" type="5001">
       <children xmi:type="notation:Node" xmi:id="_yd5cYL8xEd-e2bZ7iJrbiA" type="2001">
-        <element xmi:type="ecore:EAttribute" href="Petrinet.ecore#//Object/id"/>
+        <element xmi:type="ecore:EAttribute" href="Petrinet.ecore#//PObject/id"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_yd5cYb8xEd-e2bZ7iJrbiA"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_yd41Ub8xEd-e2bZ7iJrbiA"/>
@@ -33,7 +33,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_yd41V78xEd-e2bZ7iJrbiA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_yd3nMb8xEd-e2bZ7iJrbiA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="Petrinet.ecore#//Object"/>
+    <element xmi:type="ecore:EClass" href="Petrinet.ecore#//PObject"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yd3nMr8xEd-e2bZ7iJrbiA" x="150" y="85"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_yd5cYr8xEd-e2bZ7iJrbiA" type="1001">
@@ -221,7 +221,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_yeJ7Fb8xEd-e2bZ7iJrbiA" x="-10" y="-10"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_yeKiIL8xEd-e2bZ7iJrbiA" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_yeKiIb8xEd-e2bZ7iJrbiA" x="10" y="10"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yeKiIb8xEd-e2bZ7iJrbiA" x="5" y="7"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_yeJ7Eb8xEd-e2bZ7iJrbiA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_yeJ7Er8xEd-e2bZ7iJrbiA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>

@@ -35,13 +35,13 @@ public interface PetriNetModelFactory extends EFactory {
 	PetriNet createPetriNet();
 
 	/**
-	 * Returns a new object of class '<em>Object</em>'.
+	 * Returns a new object of class '<em>PObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Object</em>'.
+	 * @return a new object of class '<em>PObject</em>'.
 	 * @generated
 	 */
-	Object createObject();
+	PObject createPObject();
 
 	/**
 	 * Returns a new object of class '<em>Node</em>'.
