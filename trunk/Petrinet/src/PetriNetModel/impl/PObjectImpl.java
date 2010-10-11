@@ -6,9 +6,8 @@
  */
 package PetriNetModel.impl;
 
+import PetriNetModel.PObject;
 import PetriNetModel.PetriNetModelPackage;
-
-import java.math.BigInteger;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -16,24 +15,24 @@ import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Object</b></em>'.
+ * An implementation of the model object '<em><b>PObject</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link PetriNetModel.impl.ObjectImpl#getId <em>Id</em>}</li>
+ *   <li>{@link PetriNetModel.impl.PObjectImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ObjectImpl extends CDOObjectImpl implements PetriNetModel.Object {
+public class PObjectImpl extends CDOObjectImpl implements PObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ObjectImpl() {
+	protected PObjectImpl() {
 		super();
 	}
 
@@ -44,7 +43,7 @@ public class ObjectImpl extends CDOObjectImpl implements PetriNetModel.Object {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PetriNetModelPackage.Literals.OBJECT;
+		return PetriNetModelPackage.Literals.POBJECT;
 	}
 
 	/**
@@ -62,8 +61,8 @@ public class ObjectImpl extends CDOObjectImpl implements PetriNetModel.Object {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BigInteger getId() {
-		return (BigInteger)eGet(PetriNetModelPackage.Literals.OBJECT__ID, true);
+	public int getId() {
+		return (Integer)eGet(PetriNetModelPackage.Literals.POBJECT__ID, true);
 	}
 
 	/**
@@ -71,8 +70,8 @@ public class ObjectImpl extends CDOObjectImpl implements PetriNetModel.Object {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setId(BigInteger newId) {
-		eSet(PetriNetModelPackage.Literals.OBJECT__ID, newId);
+	public void setId(int newId) {
+		eSet(PetriNetModelPackage.Literals.POBJECT__ID, newId);
 	}
 
-} //ObjectImpl
+} //PObjectImpl

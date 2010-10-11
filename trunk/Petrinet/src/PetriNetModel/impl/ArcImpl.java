@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ArcImpl extends ObjectImpl implements Arc {
+public class ArcImpl extends PObjectImpl implements Arc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

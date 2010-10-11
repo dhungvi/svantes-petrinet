@@ -6,28 +6,26 @@
  */
 package PetriNetModel;
 
-import java.math.BigInteger;
-
 import org.eclipse.emf.cdo.CDOObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Object</b></em>'.
+ * A representation of the model object '<em><b>PObject</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link PetriNetModel.Object#getId <em>Id</em>}</li>
+ *   <li>{@link PetriNetModel.PObject#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
- * @see PetriNetModel.PetriNetModelPackage#getObject()
+ * @see PetriNetModel.PetriNetModelPackage#getPObject()
  * @model
  * @extends CDOObject
  * @generated
  */
-public interface Object extends CDOObject {
+public interface PObject extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -37,21 +35,21 @@ public interface Object extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(BigInteger)
-	 * @see PetriNetModel.PetriNetModelPackage#getObject_Id()
+	 * @see #setId(int)
+	 * @see PetriNetModel.PetriNetModelPackage#getPObject_Id()
 	 * @model id="true"
 	 * @generated
 	 */
-	BigInteger getId();
+	int getId();
 
 	/**
-	 * Sets the value of the '{@link PetriNetModel.Object#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link PetriNetModel.PObject#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Id</em>' attribute.
 	 * @see #getId()
 	 * @generated
 	 */
-	void setId(BigInteger value);
+	void setId(int value);
 
-} // Object
+} // PObject

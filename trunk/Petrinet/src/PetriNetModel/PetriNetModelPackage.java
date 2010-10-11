@@ -88,14 +88,14 @@ public interface PetriNetModelPackage extends EPackage {
 	int PETRI_NET_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link PetriNetModel.impl.ObjectImpl <em>Object</em>}' class.
+	 * The meta object id for the '{@link PetriNetModel.impl.PObjectImpl <em>PObject</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see PetriNetModel.impl.ObjectImpl
-	 * @see PetriNetModel.impl.PetriNetModelPackageImpl#getObject()
+	 * @see PetriNetModel.impl.PObjectImpl
+	 * @see PetriNetModel.impl.PetriNetModelPackageImpl#getPObject()
 	 * @generated
 	 */
-	int OBJECT = 1;
+	int POBJECT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -104,16 +104,16 @@ public interface PetriNetModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT__ID = 0;
+	int POBJECT__ID = 0;
 
 	/**
-	 * The number of structural features of the '<em>Object</em>' class.
+	 * The number of structural features of the '<em>PObject</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_FEATURE_COUNT = 1;
+	int POBJECT_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link PetriNetModel.impl.NodeImpl <em>Node</em>}' class.
@@ -132,7 +132,7 @@ public interface PetriNetModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__ID = OBJECT__ID;
+	int NODE__ID = POBJECT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Out</b></em>' reference list.
@@ -141,7 +141,7 @@ public interface PetriNetModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__OUT = OBJECT_FEATURE_COUNT + 0;
+	int NODE__OUT = POBJECT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' reference list.
@@ -150,7 +150,7 @@ public interface PetriNetModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__IN = OBJECT_FEATURE_COUNT + 1;
+	int NODE__IN = POBJECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -159,7 +159,7 @@ public interface PetriNetModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__NAME = OBJECT_FEATURE_COUNT + 2;
+	int NODE__NAME = POBJECT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Node</em>' class.
@@ -168,7 +168,7 @@ public interface PetriNetModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_FEATURE_COUNT = OBJECT_FEATURE_COUNT + 3;
+	int NODE_FEATURE_COUNT = POBJECT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link PetriNetModel.impl.TransitionImpl <em>Transition</em>}' class.
@@ -306,7 +306,7 @@ public interface PetriNetModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARC__ID = OBJECT__ID;
+	int ARC__ID = POBJECT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -315,7 +315,7 @@ public interface PetriNetModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARC__SOURCE = OBJECT_FEATURE_COUNT + 0;
+	int ARC__SOURCE = POBJECT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -324,7 +324,7 @@ public interface PetriNetModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARC__TARGET = OBJECT_FEATURE_COUNT + 1;
+	int ARC__TARGET = POBJECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Arc</em>' class.
@@ -333,7 +333,7 @@ public interface PetriNetModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARC_FEATURE_COUNT = OBJECT_FEATURE_COUNT + 2;
+	int ARC_FEATURE_COUNT = POBJECT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link PetriNetModel.impl.TokenImpl <em>Token</em>}' class.
@@ -377,25 +377,25 @@ public interface PetriNetModelPackage extends EPackage {
 	EReference getPetriNet_Objects();
 
 	/**
-	 * Returns the meta object for class '{@link PetriNetModel.Object <em>Object</em>}'.
+	 * Returns the meta object for class '{@link PetriNetModel.PObject <em>PObject</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Object</em>'.
-	 * @see PetriNetModel.Object
+	 * @return the meta object for class '<em>PObject</em>'.
+	 * @see PetriNetModel.PObject
 	 * @generated
 	 */
-	EClass getObject();
+	EClass getPObject();
 
 	/**
-	 * Returns the meta object for the attribute '{@link PetriNetModel.Object#getId <em>Id</em>}'.
+	 * Returns the meta object for the attribute '{@link PetriNetModel.PObject#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see PetriNetModel.Object#getId()
-	 * @see #getObject()
+	 * @see PetriNetModel.PObject#getId()
+	 * @see #getPObject()
 	 * @generated
 	 */
-	EAttribute getObject_Id();
+	EAttribute getPObject_Id();
 
 	/**
 	 * Returns the meta object for class '{@link PetriNetModel.Node <em>Node</em>}'.
@@ -554,14 +554,14 @@ public interface PetriNetModelPackage extends EPackage {
 		EReference PETRI_NET__OBJECTS = eINSTANCE.getPetriNet_Objects();
 
 		/**
-		 * The meta object literal for the '{@link PetriNetModel.impl.ObjectImpl <em>Object</em>}' class.
+		 * The meta object literal for the '{@link PetriNetModel.impl.PObjectImpl <em>PObject</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see PetriNetModel.impl.ObjectImpl
-		 * @see PetriNetModel.impl.PetriNetModelPackageImpl#getObject()
+		 * @see PetriNetModel.impl.PObjectImpl
+		 * @see PetriNetModel.impl.PetriNetModelPackageImpl#getPObject()
 		 * @generated
 		 */
-		EClass OBJECT = eINSTANCE.getObject();
+		EClass POBJECT = eINSTANCE.getPObject();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -569,7 +569,7 @@ public interface PetriNetModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OBJECT__ID = eINSTANCE.getObject_Id();
+		EAttribute POBJECT__ID = eINSTANCE.getPObject_Id();
 
 		/**
 		 * The meta object literal for the '{@link PetriNetModel.impl.NodeImpl <em>Node</em>}' class.

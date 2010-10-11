@@ -8,6 +8,7 @@ package PetriNetModel.impl;
 
 import PetriNetModel.Arc;
 import PetriNetModel.Node;
+import PetriNetModel.PObject;
 import PetriNetModel.PetriNet;
 import PetriNetModel.PetriNetModelFactory;
 import PetriNetModel.PetriNetModelPackage;
@@ -41,7 +42,7 @@ public class PetriNetModelPackageImpl extends EPackageImpl implements PetriNetMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass objectEClass = null;
+	private EClass pObjectEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,8 +163,8 @@ public class PetriNetModelPackageImpl extends EPackageImpl implements PetriNetMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getObject() {
-		return objectEClass;
+	public EClass getPObject() {
+		return pObjectEClass;
 	}
 
 	/**
@@ -171,8 +172,8 @@ public class PetriNetModelPackageImpl extends EPackageImpl implements PetriNetMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getObject_Id() {
-		return (EAttribute)objectEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPObject_Id() {
+		return (EAttribute)pObjectEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -305,8 +306,8 @@ public class PetriNetModelPackageImpl extends EPackageImpl implements PetriNetMo
 		petriNetEClass = createEClass(PETRI_NET);
 		createEReference(petriNetEClass, PETRI_NET__OBJECTS);
 
-		objectEClass = createEClass(OBJECT);
-		createEAttribute(objectEClass, OBJECT__ID);
+		pObjectEClass = createEClass(POBJECT);
+		createEAttribute(pObjectEClass, POBJECT__ID);
 
 		nodeEClass = createEClass(NODE);
 		createEReference(nodeEClass, NODE__OUT);
@@ -353,17 +354,17 @@ public class PetriNetModelPackageImpl extends EPackageImpl implements PetriNetMo
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		nodeEClass.getESuperTypes().add(this.getObject());
+		nodeEClass.getESuperTypes().add(this.getPObject());
 		transitionEClass.getESuperTypes().add(this.getNode());
 		placeEClass.getESuperTypes().add(this.getNode());
-		arcEClass.getESuperTypes().add(this.getObject());
+		arcEClass.getESuperTypes().add(this.getPObject());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(petriNetEClass, PetriNet.class, "PetriNet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPetriNet_Objects(), this.getObject(), null, "objects", null, 0, -1, PetriNet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPetriNet_Objects(), this.getPObject(), null, "objects", null, 0, -1, PetriNet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(objectEClass, PetriNetModel.Object.class, "Object", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getObject_Id(), ecorePackage.getEBigInteger(), "id", null, 0, 1, PetriNetModel.Object.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(pObjectEClass, PObject.class, "PObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPObject_Id(), ecorePackage.getEInt(), "id", null, 0, 1, PObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNode_Out(), this.getArc(), this.getArc_Source(), "out", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

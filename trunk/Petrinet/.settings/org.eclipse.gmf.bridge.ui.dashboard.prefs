@@ -1,0 +1,8 @@
+#Thu Sep 30 23:11:23 CEST 2010
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/Petrinet/model/Petrinet.genmodel
+gmf_dashboard/domainModel=platform\:/resource/Petrinet/model/Petrinet.ecore
+gmf_dashboard/generationModel=platform\:/resource/Petrinet/model/Petrinet.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/Petrinet/model/Petrinet.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/Petrinet/model/Petrinet.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/Petrinet/model/Petrinet.gmftool

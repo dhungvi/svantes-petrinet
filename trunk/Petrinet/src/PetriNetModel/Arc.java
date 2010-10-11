@@ -24,7 +24,7 @@ package PetriNetModel;
  * @model
  * @generated
  */
-public interface Arc extends PetriNetModel.Object {
+public interface Arc extends PObject {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link PetriNetModel.Node#getOut <em>Out</em>}'.

@@ -6,6 +6,7 @@
  */
 package PetriNetModel.impl;
 
+import PetriNetModel.*;
 import PetriNetModel.Arc;
 import PetriNetModel.Node;
 import PetriNetModel.PetriNet;
@@ -68,7 +69,7 @@ public class PetriNetModelFactoryImpl extends EFactoryImpl implements PetriNetMo
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case PetriNetModelPackage.PETRI_NET: return (EObject)createPetriNet();
-			case PetriNetModelPackage.OBJECT: return (EObject)createObject();
+			case PetriNetModelPackage.POBJECT: return (EObject)createPObject();
 			case PetriNetModelPackage.NODE: return (EObject)createNode();
 			case PetriNetModelPackage.TRANSITION: return (EObject)createTransition();
 			case PetriNetModelPackage.PLACE: return (EObject)createPlace();
@@ -94,9 +95,9 @@ public class PetriNetModelFactoryImpl extends EFactoryImpl implements PetriNetMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PetriNetModel.Object createObject() {
-		ObjectImpl object = new ObjectImpl();
-		return object;
+	public PObject createPObject() {
+		PObjectImpl pObject = new PObjectImpl();
+		return pObject;
 	}
 
 	/**
