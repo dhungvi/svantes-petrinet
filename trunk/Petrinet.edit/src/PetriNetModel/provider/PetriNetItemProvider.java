@@ -10,17 +10,21 @@ package PetriNetModel.provider;
 import PetriNetModel.PetriNet;
 import PetriNetModel.PetriNetModelFactory;
 import PetriNetModel.PetriNetModelPackage;
+import PetriNetModel.command.CreatePObjectWIDCommand;
 
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -154,7 +158,7 @@ public class PetriNetItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PetriNetModelPackage.Literals.PETRI_NET__OBJECTS,
-				 PetriNetModelFactory.eINSTANCE.createObject()));
+				 PetriNetModelFactory.eINSTANCE.createPObject()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -186,6 +190,16 @@ public class PetriNetItemProvider
 	@Override
 	public ResourceLocator getResourceLocator() {
 		return PetrinetEditPlugin.INSTANCE;
+	}
+	
+	@Override
+	protected Command createAddCommand(EditingDomain domain, EObject owner,
+			EStructuralFeature feature, Collection<?> collection, int index) {
+		// since all child elements of the Petri net are PObjects, we
+		// do not check the structural feature here at all (for simplicity,
+		// but that is not defensive programming at all).
+		return new CreatePObjectWIDCommand(domain, owner,
+				super.createAddCommand(domain, owner, feature, collection, index));
 	}
 
 }

@@ -7,9 +7,8 @@
 package PetriNetModel.provider;
 
 
+import PetriNetModel.PObject;
 import PetriNetModel.PetriNetModelPackage;
-
-import java.math.BigInteger;
 
 import java.util.Collection;
 import java.util.List;
@@ -31,12 +30,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link PetriNetModel.Object} object.
+ * This is the item provider adapter for a {@link PetriNetModel.PObject} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ObjectItemProvider
+public class PObjectItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -50,7 +49,7 @@ public class ObjectItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ObjectItemProvider(AdapterFactory adapterFactory) {
+	public PObjectItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -81,26 +80,26 @@ public class ObjectItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Object_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Object_id_feature", "_UI_Object_type"),
-				 PetriNetModelPackage.Literals.OBJECT__ID,
+				 getString("_UI_PObject_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PObject_id_feature", "_UI_PObject_type"),
+				 PetriNetModelPackage.Literals.POBJECT__ID,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This returns Object.gif.
+	 * This returns PObject.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Object"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PObject"));
 	}
 
 	/**
@@ -111,11 +110,8 @@ public class ObjectItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		BigInteger labelValue = ((PetriNetModel.Object)object).getId();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Object_type") :
-			getString("_UI_Object_type") + " " + label;
+		PObject pObject = (PObject)object;
+		return getString("_UI_PObject_type") + " " + pObject.getId();
 	}
 
 	/**
@@ -129,8 +125,8 @@ public class ObjectItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PetriNetModel.Object.class)) {
-			case PetriNetModelPackage.OBJECT__ID:
+		switch (notification.getFeatureID(PObject.class)) {
+			case PetriNetModelPackage.POBJECT__ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
