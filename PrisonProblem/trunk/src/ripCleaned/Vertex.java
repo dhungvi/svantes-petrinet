@@ -4,16 +4,17 @@ import java.util.Vector;
 
 public class Vertex
 {
-    public Vector outEdges;
-    public Vector inEdges;
+    public Vector<Edge> outEdges;
+    public Vector<Edge> inEdges;
     public boolean highlighted;
     public boolean source;
     public boolean sink;
+    public Edge prev_edge;
 
     public Vertex()
     {
-        outEdges = new Vector();
-        inEdges = new Vector();
+        outEdges = new Vector<Edge>();
+        inEdges = new Vector<Edge>();
         highlighted = false;
         source = false;
         sink = false;

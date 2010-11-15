@@ -60,7 +60,7 @@ public class PEDFilereader {
 
 	public static void main(String[] args) {
 		PEDFilereader ped = new PEDFilereader();
-		ped.readFile("jannik.ped");
+		ped.readFile("problem019.ped");
 		
 		System.out.println("W="+ped.getTunnelWidth()+ " L="+ped.getTunnelLength()+ " N="+ped.getNoOfLamps()+ " r="+ped.getRadius());
 		

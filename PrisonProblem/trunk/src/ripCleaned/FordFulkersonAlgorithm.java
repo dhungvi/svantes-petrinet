@@ -1,10 +1,6 @@
 package ripCleaned;
 
 import java.util.Vector;
-import javax.swing.JLabel;
-
-// Referenced classes of package links.applet.graphtheory:
-//            GraphAlgorithm, Vertex, Edge, GraphData
 
 public class FordFulkersonAlgorithm
 {
@@ -12,7 +8,6 @@ public class FordFulkersonAlgorithm
     public boolean editWhileRunning;
     boolean done;
     GraphData graphData;
-//    JLabel explanation;
     int stage;
 
     Vertex source;

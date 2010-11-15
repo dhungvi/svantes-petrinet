@@ -2,18 +2,15 @@ package ripCleaned;
 
 import java.util.Vector;
 
-// Referenced classes of package links.applet.graphtheory:
-//            Vertex, Edge
-
 public class GraphData
 {
-	public Vector allVertices;
-	public Vector allEdges;
+	public Vector<Vertex> allVertices;
+	public Vector<Edge> allEdges;
 
 	public GraphData()
 	{
-		allVertices = new Vector();
-		allEdges = new Vector();
+		allVertices = new Vector<Vertex>();
+		allEdges = new Vector<Edge>();
 	}
 
 	public void addVertex(Vertex vertex)
@@ -30,22 +27,27 @@ public class GraphData
 
 	public void addEdge(Edge edge)
 	{
-		for(int i = 0; i < edge.start.inEdges.size(); i++)
-		{
-			if(edge.end.outEdges.contains(edge.start.inEdges.elementAt(i)))
-			{
-				return;
-			}
-		}
 
-		for(int j = 0; j < edge.start.outEdges.size(); j++)
-		{
-			if(edge.end.inEdges.contains(edge.start.outEdges.elementAt(j)))
-			{
-				return;
-			}
-		}
+//		for(int i = 0; i < edge.start.inEdges.size(); i++)
+//		{
+//			if(edge.end.outEdges.contains(edge.start.inEdges.elementAt(i)))
+//			{
+//				System.err.println("KOM IKKE MED 1");
+//				return;
+//			}
+//		}
+//
+//		for(int j = 0; j < edge.start.outEdges.size(); j++)
+//		{
+//			if(edge.end.inEdges.contains(edge.start.outEdges.elementAt(j)))
+//			{
+//				System.err.println("KOM IKKE MED 2");
+//				return;
+//			}
+//		}
 
+		
+		
 		allEdges.addElement(edge);
 		edge.start.outEdges.addElement(edge);
 		edge.end.inEdges.addElement(edge);
