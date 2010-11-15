@@ -10,6 +10,8 @@ public class FordFulkersonAlgorithm2
 	boolean done;
 	GraphData graphData;
 	int stage;
+	
+	int count;
 
 	Vertex source;
 	Vertex sink;
@@ -84,7 +86,7 @@ public class FordFulkersonAlgorithm2
 
 
 	public int max_flow() {
-		int count = 0;
+		count = 0;
 		while (bfs()) {
 			count++;
 		}
@@ -147,9 +149,17 @@ public class FordFulkersonAlgorithm2
 			for (Edge e : where.prev_edge.start.inEdges) {
 				if (e.start.equals(where)) {
 					e.flow += 1;
+					
+					
+					if (e.flow >= 2 || e.flow < 0) System.out.println("VALUE = " +e.flow);
+					if (where.prev_edge.flow >= 2 || where.prev_edge.flow < 0) System.out.println("VALUE = " +where.prev_edge.flow);
+					
+					
 					break;
 				}
 			}
+			
+			
 
 			
 			// flow updated - xxxxxxx    

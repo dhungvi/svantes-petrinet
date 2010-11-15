@@ -24,7 +24,7 @@ import javax.swing.JPanel;
 public class Program2 {
 
 	public static void main(String[] args) {
-		new Program2("jannik.ped");
+		new Program2("problem032.ped");
 //		new Program2("problem010.ped");
 //		new Program2("problem011.ped");
 //		new Program2("problem015.ped");
@@ -44,14 +44,14 @@ public class Program2 {
 //		System.out.println("W="+ped.getTunnelWidth()+ " L="+ped.getTunnelLength()+ " N="+ped.getNoOfLamps()+ " r="+ped.getRadius());
 //
 		int[][] lamp_map = ped.getLamp_map();
-//		for (int[] lamp : lamp_map) {
-//			System.out.println("x="+lamp[0]+" y="+lamp[1]);
-//		}
+		for (int[] lamp : lamp_map) {
+			System.out.println("x="+lamp[0]+" y="+lamp[1]);
+		}
 
-//		GraphPainter paint = new GraphPainter();
-//		paint.pack();
-//		paint.setVisible(true);
-//		paint.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		GraphPainter paint = new GraphPainter();
+		paint.pack();
+		paint.setVisible(true);
+		paint.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		
 		
@@ -92,16 +92,16 @@ public class Program2 {
 			int current_y = lamp_map[i][1];
 
 
-			// 
-			if (current_x+radius < 0 || current_x-radius > length) {
-				System.out.println("Continue!");
-				continue; // if the lamp does not light inside the length of tunnel. then we do not care about it. 
-			}
-			
-			if (current_y+radius < 0 || current_y-radius > width) {
-				System.out.println("Continue!");
-				continue; // if the lamp does not light inside the length of tunnel. then we do not care about it. 
-			}
+//			// 
+//			if (current_x+radius < 0 || current_x-radius > length) {
+//				System.out.println("Continue!");
+//				continue; // if the lamp does not light inside the length of tunnel. then we do not care about it. 
+//			}
+//			
+//			if (current_y+radius < 0 || current_y-radius > width) {
+//				System.out.println("Continue!");
+//				continue; // if the lamp does not light inside the length of tunnel. then we do not care about it. 
+//			}
 
 
 
@@ -135,8 +135,8 @@ public class Program2 {
 			for (int j=0; j<lamp_map.length; j++) {
 				if (j == i) continue; //don't compare the same vertex
 				int[] lamp = lamp_map[j];
-				double distance = Math.sqrt( (current_x - lamp[0])*(current_x - lamp[0]) + (current_y - lamp[1])*(current_y - lamp[1])  ); 
-				if (distance <= radius*2) { //the lamps is overlapping 
+				double distance = (current_x - lamp[0])*(current_x - lamp[0]) + (current_y - lamp[1])*(current_y - lamp[1]);
+				if (distance <= (radius*2)*(radius*2)) { //the lamps is overlapping 
 					Edge e = new Edge(vertexes[i], vertexes[j]);
 					e.flow = 1;
 					graphdata.addEdge(e);
