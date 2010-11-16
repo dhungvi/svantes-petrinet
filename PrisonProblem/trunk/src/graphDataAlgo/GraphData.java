@@ -13,51 +13,31 @@ public class GraphData
 		allEdges = new Vector<Edge>();
 	}
 
-	public void addVertex(Vertex vertex)
+	public void addVertex(Vertex vertex, int nr)
 	{
 		allVertices.addElement(vertex);
+		Vertex dummy = new Vertex(nr);
+		allVertices.addElement(dummy);
+		
+		// add egdes between node and dummy
+		this.addInternalEdge(new Edge(vertex, dummy));
+		this.addInternalEdge(new Edge(dummy, vertex));
 	}
 
-	public void deleteVertex(Vertex vertex)
-	{
-		allVertices.removeElement(vertex);
-		for(; vertex.inEdges.size() > 0; deleteEdge((Edge)vertex.inEdges.elementAt(0))) { }
-		for(; vertex.outEdges.size() > 0; deleteEdge((Edge)vertex.outEdges.elementAt(0))) { }
-	}
 
 	public void addEdge(Edge edge)
 	{
-
-//		for(int i = 0; i < edge.start.inEdges.size(); i++)
-//		{
-//			if(edge.end.outEdges.contains(edge.start.inEdges.elementAt(i)))
-//			{
-//				System.err.println("KOM IKKE MED 1");
-//				return;
-//			}
-//		}
-//
-//		for(int j = 0; j < edge.start.outEdges.size(); j++)
-//		{
-//			if(edge.end.inEdges.contains(edge.start.outEdges.elementAt(j)))
-//			{
-//				System.err.println("KOM IKKE MED 2");
-//				return;
-//			}
-//		}
-
-		
-		
 		allEdges.addElement(edge);
-		edge.start.outEdges.addElement(edge);
+		Vertex v = this.allVertices.get(edge.start.number+1);
+		v.outEdges.addElement(edge);
 		edge.end.inEdges.addElement(edge);
 	}
 
-	public void deleteEdge(Edge edge)
+	public void addInternalEdge(Edge edge)
 	{
-		allEdges.removeElement(edge);
-		edge.start.outEdges.removeElement(edge);
-		edge.end.inEdges.removeElement(edge);
+		allEdges.addElement(edge);
+		edge.start.outEdges.addElement(edge);
+		edge.end.inEdges.addElement(edge);
 	}
 
 }

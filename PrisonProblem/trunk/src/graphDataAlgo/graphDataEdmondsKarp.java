@@ -1,8 +1,8 @@
 package graphDataAlgo;
-import ripCleaned.Edge;
-import ripCleaned.GraphData;
-import ripCleaned.PEDFilereader;
-import ripCleaned.Vertex;
+//import ripCleaned.Edge;
+//import ripCleaned.GraphData;
+//import ripCleaned.PEDFilereader;
+//import ripCleaned.Vertex;
 
 class graphDataEdmondsKarp
 {
@@ -11,10 +11,12 @@ class graphDataEdmondsKarp
 	int[][] capacity;
 	private int[] parent, color, queue;
 	private int[] min_capacity;
-	private int size, sourceIndex, sinkIndex, first, last, number = -1;
+	private int size, sourceIndex, sinkIndex, first, last;
+	public int number = -1;
 	private int max_flow;
 
 	public static void main(String[] args) {
+		new graphDataEdmondsKarp("ped/test.ped");
 		new graphDataEdmondsKarp("ped/problem001.ped");
 		new graphDataEdmondsKarp("ped/problem010.ped");
 		new graphDataEdmondsKarp("ped/problem011.ped");
@@ -57,13 +59,13 @@ class graphDataEdmondsKarp
 		// dummy source
 		Vertex sourceVertex = new Vertex(getNextNumber());
 		sourceVertex.setSource();
-		graphdata.addVertex(sourceVertex);
+		graphdata.addVertex(sourceVertex, this.getNextNumber());
 		sourceIndex = sourceVertex.number;
 		
 		// dummy sink
 		Vertex sinkVertex = new Vertex(getNextNumber());
 		sinkVertex.setSink();
-		graphdata.addVertex(sinkVertex);
+		graphdata.addVertex(sinkVertex, this.getNextNumber());
 		sinkIndex = sinkVertex.number;
 
 		// Create all the Vertexes
@@ -71,7 +73,7 @@ class graphDataEdmondsKarp
 		for (int i=0; i<vertexes.length; i++) {
 			vertexes[i] = new Vertex(getNextNumber());
 			vertexes[i].setNormal();
-			graphdata.addVertex(vertexes[i]);
+			graphdata.addVertex(vertexes[i], this.getNextNumber());
 		}
 
 		// Create all the Edges
@@ -87,7 +89,8 @@ class graphDataEdmondsKarp
 			if (current_y+radius >= width-1) { // the "top" of the tunnel is touched
 				// create the edges between source and vertex
 				Edge e1 = new Edge(sourceVertex, vertexes[i]);
-				e1.flow = 1; //1
+				e1.flow = 1; //1				
+				
 				graphdata.addEdge(e1);
 
 				Edge e2 = new Edge(vertexes[i], sourceVertex);

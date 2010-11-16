@@ -10,9 +10,11 @@ public class Vertex
     public boolean source;
     public boolean sink;
     public Edge prev_edge;
+    public int number;
 
-    public Vertex()
+    public Vertex(int index)
     {
+    	this.number = index;
         outEdges = new Vector<Edge>();
         inEdges = new Vector<Edge>();
         highlighted = false;
